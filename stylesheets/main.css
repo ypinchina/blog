@@ -1,0 +1,96 @@
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+html{
+    background-color: #000000;
+}
+/*头部动画加载相关*/
+@keyframes webload {
+    0%{
+        top:-430px;
+        opacity: 0;
+        transform:scale(1.065);
+    }
+    100%{
+        top:0;
+        opacity: 1;
+    }
+}
+
+/*居中类*/
+.center_container{
+     width: 900px;
+    margin: 0 auto;
+}
+/*头部导航*/
+.header{
+    position: absolute;
+    top:0;
+    height: 430px;
+    width: 100%;
+    animation-duration:1.5s;
+    animation-delay: 1s;
+    animation-name: webload;
+    animation-fill-mode:both;
+}
+.header h2{
+    color: #fff;
+    text-align: center;
+}
+.nav{
+    font-size: 0;
+    margin-top: 40px;
+}
+.nav .nav_ul a{
+    display: inline-block;
+    width: 150px;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+
+}
+.nav .nav_ul a:hover{
+   border-left: 2px solid #0088bb;
+    border-right: 2px solid #0088bb;
+    width: 146px;
+}
+
+
+.nav .nav_ul a+a{
+    margin-left: 20px;
+}
+
+.myLogo{
+    width: 300px;
+    height:310px;
+    margin:  10px auto 20px;
+}
+.myLogo .dendoh{
+    width: 300px;
+    height: 300px;
+    background: url("../images/dendoh.jpg") center;
+    -webkit-border-radius:100%;
+    -moz-border-radius:100%;
+    border-radius:100%;
+    transition: transform 1s ease-in;
+}
+.myLogo .dendoh:hover{
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+/*左侧个人简介及回到顶部*/
+.slice_bar{
+    display: none;
+    width: 30px;
+    height: 80px;
+    position: fixed;
+    bottom:20px;
+    left: 20px;
+    background-color: #ccc;
+}

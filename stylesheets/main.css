@@ -5,14 +5,14 @@ a{
     text-decoration: none;
 }
 html{
-    background-color: #000000;
+    background-color: #fff;
 }
 /*头部动画加载相关*/
 @keyframes webload {
     0%{
         top:-430px;
         opacity: 0;
-        transform:scale(1.065);
+
     }
     100%{
         top:0;
@@ -37,8 +37,15 @@ html{
     animation-fill-mode:both;
 }
 .header h2{
+    width: 280px;
+    height: 27px;
     color: #fff;
+    background-color: #000000;
     text-align: center;
+    margin: 0 auto;
+    -webkit-border-radius:20px 0 20px 0;
+    -moz-border-radius:20px 0 20px 0;
+    border-radius:20px 0 20px 0;
 }
 .nav{
     font-size: 0;
@@ -49,13 +56,19 @@ html{
     width: 150px;
     font-size: 16px;
     text-align: center;
-    color: #fff;
+    color: #000;
 
 }
-.nav .nav_ul a:hover{
+.nav .nav_ul a+a:hover{
    border-left: 2px solid #0088bb;
     border-right: 2px solid #0088bb;
     width: 146px;
+}
+.nav_active{
+    width: 146px;
+    border-left: 2px solid #0088bb;
+    border-right: 2px solid #0088bb;
+
 }
 
 
@@ -86,11 +99,25 @@ html{
 }
 /*左侧个人简介及回到顶部*/
 .slice_bar{
-    display: none;
-    width: 30px;
-    height: 80px;
+
+    width: 32px;
+    height: 84px;
     position: fixed;
     bottom:20px;
     left: 20px;
-    background-color: #ccc;
+    background-color: #fff;
+}
+.slice_bar span{
+    display: inline-block;
+}
+.slice_bar .person_info{
+    background: url("../images/personal.png");
+    width: 32px;
+    height: 32px;
+}
+.slice_bar .top{
+    background: url("../images/align_top.png");
+    width: 31px;
+    height: 32px;
+    margin-top: 20px;
 }

@@ -130,7 +130,7 @@ html {
     position: fixed;
     bottom: 150px;
     right: 20px;
-    
+
 }
 
 .slice_bar span {
@@ -225,7 +225,7 @@ html {
     background: url("../images/github.png");
 }
 .footer #contactMe .social:nth-child(4) a{
-    background: url("../images/twitter.png");
+    background: url("../images/douban.png");
 }
 .footer #contactMe .social:nth-child(5) a{
     background: url("../images/mail.png");

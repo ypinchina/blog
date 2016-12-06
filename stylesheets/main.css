@@ -5,10 +5,22 @@ ul {
 a {
     text-decoration: none;
 }
+.clearfix:after{
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    /* 触发 hasLayout */
+    zoom: 1;
+}
 
 html {
     background-color: #fff;
-    height: 2000px;
+    height: 1650px;
 }
 
 /*头部动画加载相关*/
@@ -26,7 +38,7 @@ html {
 
 /*居中类*/
 .center_container {
-    width: 900px;
+    width: 800px;
     margin: 0 auto;
 }
 
@@ -49,7 +61,7 @@ html {
     color: #fff;
     background-color: #000000;
     text-align: center;
-    margin: 0 auto;
+    margin: 20px auto ;
     -webkit-border-radius: 20px 0 20px 0;
     -moz-border-radius: 20px 0 20px 0;
     border-radius: 20px 0 20px 0;
@@ -57,12 +69,12 @@ html {
 
 .nav {
     font-size: 0;
-    margin-top: 40px;
+    padding-top: 40px;
 }
 
 .nav .nav_ul a {
     display: inline-block;
-    width: 150px;
+    width: 130px;
     font-size: 16px;
     text-align: center;
     color: #000;
@@ -72,11 +84,11 @@ html {
 .nav .nav_ul a + a:hover {
     border-left: 2px solid #0088bb;
     border-right: 2px solid #0088bb;
-    width: 146px;
+    width: 126px;
 }
 
 .nav_active {
-    width: 146px;
+    width: 126px;
     border-left: 2px solid #0088bb;
     border-right: 2px solid #0088bb;
 
@@ -116,7 +128,7 @@ html {
     width: 32px;
     height: 84px;
     position: fixed;
-    bottom: 20px;
+    bottom: 150px;
     right: 20px;
     background-color: #fff;
 }
@@ -165,4 +177,56 @@ html {
 }
 .about_me h3{
     text-align: center;
+}
+.footer{
+    height: 150px;
+    background-color: #000;
+    font-size: 0;
+}
+.main{
+    height: 1500px;
+}
+.footer #contactMe{
+    height: 150px;
+
+
+}
+
+.footer #contactMe{
+    margin: 0 auto;
+
+}
+.footer #contactMe .social{
+    width: 48px;
+    height: 48px;
+    float: left;
+    margin:  50px 50px 0;
+    transition: transform .6s ease-in;
+}
+.footer #contactMe .social:hover{
+    transform: rotateX(180deg);
+}
+
+
+
+.footer #contactMe .social a{
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+
+}
+.footer #contactMe .social:first-child a{
+    background: url("../images/LinkedIn.png");
+}
+.footer #contactMe .social:nth-child(2) a{
+    background: url("../images/Facebook.png");
+}
+.footer #contactMe .social:nth-child(3) a{
+    background: url("../images/github.png");
+}
+.footer #contactMe .social:nth-child(4) a{
+    background: url("../images/twitter.png");
+}
+.footer #contactMe .social:nth-child(5) a{
+    background: url("../images/mail.png");
 }

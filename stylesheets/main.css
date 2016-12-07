@@ -1,10 +1,11 @@
 ul {
-     list-style: none;
- }
+    list-style: none;
+}
 
 a {
     text-decoration: none;
 }
+
 /* =============
     浏览器更新提示
    ============= */
@@ -13,11 +14,13 @@ a {
     padding: 10px;
     background: #ccc;
 }
-.browserupgrade a{
+
+.browserupgrade a {
     color: #f00;
 }
+
 /*清除浮动样式*/
-.clearfix:after{
+.clearfix:after {
     clear: both;
     content: ".";
     display: block;
@@ -32,19 +35,18 @@ a {
 
 html {
 
-    height: 1650px;
-    background: linear-gradient(#22c3aa,#333);
+    background: linear-gradient(#22c3aa, #333);
 }
 
 /*头部动画加载相关*/
 @keyframes webload {
     0% {
-        top: -430px;
+
         opacity: 0;
 
     }
     100% {
-        top: 0;
+
         opacity: 1;
     }
 }
@@ -58,15 +60,11 @@ html {
 /*头部导航*/
 .header {
     border-top: 5px #000 solid;
-    position: absolute;
-    top: 0;
-    height: 430px;
-    width: 100%;
     animation-duration: 1.5s;
     animation-delay: 1s;
     animation-name: webload;
     animation-fill-mode: both;
-    z-index: 2;
+
 }
 
 .header h2 {
@@ -75,7 +73,7 @@ html {
     color: #fff;
     background-color: #000000;
     text-align: center;
-    margin: 20px auto ;
+    margin: 20px auto;
     -webkit-border-radius: 20px 0 20px 0;
     -moz-border-radius: 20px 0 20px 0;
     border-radius: 20px 0 20px 0;
@@ -92,12 +90,10 @@ html {
     font-size: 18px;
     text-align: center;
     color: #000;
-    font-family: Lato,"Microsoft YaHei",sans-serif;
+    font-family: Lato, "Microsoft YaHei", sans-serif;
     font-weight: bold;
 
 }
-
-
 
 .nav .nav_ul a + a {
     margin-left: 20px;
@@ -136,7 +132,6 @@ html {
     bottom: 20px;
     right: 20px;
 
-
 }
 
 .slice_bar span {
@@ -156,96 +151,110 @@ html {
     height: 32px;
     margin-top: 20px;
 }
-
+/*博客正文*/
+#wmd-preview{
+    margin-top: 50px;
+}
 /*个人信息侧边栏*/
 .about_me {
-    height: 100%;
-    width: 280px;
+    width: 0;
     position: fixed;
-    right: -285px;
-    background:linear-gradient(#fea852,#ccc);
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(#fea852, #ccc);
 }
 
 .about_me .fix_area {
     width: 285px;
     height: 304px;
 
-
 }
-.about_me .fix_area .myFavor{
+
+.about_me .fix_area .myFavor {
     display: inline-block;
     width: 200px;
     height: 200px;
 
 }
-.myFavor img{
-   display: inline-block;
+
+.myFavor img {
+    display: inline-block;
     margin: 50px 60px;
     border: 1px dashed #333;
 }
 
-.about_me h4{
+.about_me h4 {
     text-align: center;
 }
-.footer{
+
+.footer {
     height: 150px;
     background-color: #333333;
     font-size: 0;
 
 }
-.main{
+
+.main {
     height: 1500px;
 }
-.footer #contactMe{
-    height: 150px;
 
+.footer #contactMe {
+    height: 150px;
 
 }
 
-.footer #contactMe{
+.footer #contactMe {
     margin: 0 auto;
 
 }
-.footer #contactMe .social{
+
+.footer #contactMe .social {
     width: 48px;
     height: 48px;
     display: inline-block;
-    margin:  50px 50px 0;
+    margin: 50px 50px 0;
     transition: transform .6s ease-in;
 }
-.footer #contactMe .social:hover{
+
+.footer #contactMe .social:hover {
     transform: rotateX(180deg);
 }
-.footer h4{
+
+.footer h4 {
     text-align: center;
     background: #333;
     color: #fff;
 }
 
-
-
-.footer #contactMe .social a{
+.footer #contactMe .social a {
     display: inline-block;
     width: 48px;
     height: 48px;
 
 }
-.footer #contactMe .social:first-child a{
+
+.footer #contactMe .social:first-child a {
     background: url("../images/LinkedIn.png");
 }
-.footer #contactMe .social:nth-child(2) a{
+
+.footer #contactMe .social:nth-child(2) a {
     background: url("../images/Facebook.png");
 }
-.footer #contactMe .social:nth-child(3) a{
+
+.footer #contactMe .social:nth-child(3) a {
     background: url("../images/github.png");
 }
-.footer #contactMe .social:nth-child(4) a{
+
+.footer #contactMe .social:nth-child(4) a {
     background: url("../images/douban.png");
 }
-.footer #contactMe .social:nth-child(5) a{
+
+.footer #contactMe .social:nth-child(5) a {
     background: url("../images/mail.png");
 }
-.footer p{
+
+.footer p {
     text-align: center;
     font-size: 15px;
     color: #fff;

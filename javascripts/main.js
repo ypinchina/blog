@@ -3,8 +3,10 @@
  */
 // 入口
 $(document).ready(function () {
+
     showTopLogo();
     sidebar();
+
     })
 
 var topButtom = $(".slice_bar .top");
@@ -12,7 +14,7 @@ var right_info = $('.person_info');
 
 function sidebar() {
     var isSidebarVisible;
-    var SIDEBAR_WIDTH = 540;
+    var SIDEBAR_WIDTH = 280;
     right_info.on('click', function () {
         var sidebarWidth = isSidebarVisible ? 0 : SIDEBAR_WIDTH;
 
@@ -20,12 +22,13 @@ function sidebar() {
             width: sidebarWidth
         }, 800);
         $('.center_container').animate({
-            paddingRight: sidebarWidth-230
+            paddingRight: sidebarWidth
         }, 800);
 
         isSidebarVisible = !isSidebarVisible;
     });
 }
+
 function showTopLogo() {
 
     topButtom.click(function () {

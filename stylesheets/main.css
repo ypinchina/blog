@@ -1,10 +1,22 @@
 ul {
-    list-style: none;
-}
+     list-style: none;
+ }
 
 a {
     text-decoration: none;
 }
+/* =============
+    浏览器更新提示
+   ============= */
+.browserupgrade {
+    margin: 0;
+    padding: 10px;
+    background: #ccc;
+}
+.browserupgrade a{
+    color: #f00;
+}
+/*清除浮动样式*/
 .clearfix:after{
     content: " ";
     display: block;
@@ -53,6 +65,7 @@ html {
     animation-delay: 1s;
     animation-name: webload;
     animation-fill-mode: both;
+    z-index: 2;
 }
 
 .header h2 {
@@ -128,8 +141,9 @@ html {
     width: 32px;
     height: 84px;
     position: fixed;
-    bottom: 150px;
+    bottom: 20px;
     right: 20px;
+
 
 }
 
@@ -157,30 +171,32 @@ html {
     width: 280px;
     position: fixed;
     right: -285px;
-    background-color: #fff;
-    border: 5px solid #000;
-    border-right: none;
+    background-color: #fea852;
 }
 
 .about_me .fix_area {
     width: 285px;
     height: 304px;
-    background-color: #000;
+
 
 }
 .about_me .fix_area .myFavor{
     display: inline-block;
-    width: 280px;
-    height: 280px;
-    background: url("../images/Love.png") center;
-    padding-top: 20px;
+    width: 200px;
+    height: 200px;
+
 }
-.about_me h3{
+.myFavor img{
+   display: inline-block;
+    margin: 50px 60px;
+}
+
+.about_me h4{
     text-align: center;
 }
 .footer{
     height: 150px;
-    background-color: #000;
+    background-color: #333333;
     font-size: 0;
 }
 .main{

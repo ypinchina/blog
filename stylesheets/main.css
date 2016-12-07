@@ -18,10 +18,10 @@ a {
 }
 /*清除浮动样式*/
 .clearfix:after{
-    content: " ";
+    clear: both;
+    content: ".";
     display: block;
     height: 0;
-    clear: both;
     visibility: hidden;
 }
 
@@ -31,8 +31,9 @@ a {
 }
 
 html {
-    background-color: #fff;
+
     height: 1650px;
+    background: linear-gradient(#22c3aa,#333);
 }
 
 /*头部动画加载相关*/
@@ -88,24 +89,15 @@ html {
 .nav .nav_ul a {
     display: inline-block;
     width: 130px;
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
     color: #000;
+    font-family: Lato,"Microsoft YaHei",sans-serif;
+    font-weight: bold;
 
 }
 
-.nav .nav_ul a + a:hover {
-    border-left: 2px solid #0088bb;
-    border-right: 2px solid #0088bb;
-    width: 126px;
-}
 
-.nav_active {
-    width: 126px;
-    border-left: 2px solid #0088bb;
-    border-right: 2px solid #0088bb;
-
-}
 
 .nav .nav_ul a + a {
     margin-left: 20px;
@@ -171,7 +163,7 @@ html {
     width: 280px;
     position: fixed;
     right: -285px;
-    background-color: #fea852;
+    background:linear-gradient(#fea852,#ccc);
 }
 
 .about_me .fix_area {
@@ -189,6 +181,7 @@ html {
 .myFavor img{
    display: inline-block;
     margin: 50px 60px;
+    border: 1px dashed #333;
 }
 
 .about_me h4{
@@ -198,6 +191,7 @@ html {
     height: 150px;
     background-color: #333333;
     font-size: 0;
+
 }
 .main{
     height: 1500px;
@@ -215,12 +209,17 @@ html {
 .footer #contactMe .social{
     width: 48px;
     height: 48px;
-    float: left;
+    display: inline-block;
     margin:  50px 50px 0;
     transition: transform .6s ease-in;
 }
 .footer #contactMe .social:hover{
     transform: rotateX(180deg);
+}
+.footer h4{
+    text-align: center;
+    background: #333;
+    color: #fff;
 }
 
 
@@ -245,4 +244,10 @@ html {
 }
 .footer #contactMe .social:nth-child(5) a{
     background: url("../images/mail.png");
+}
+.footer p{
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    padding-top: 20px;
 }

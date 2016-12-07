@@ -12,7 +12,7 @@ var right_info = $('.person_info');
 
 function sidebar() {
     var isSidebarVisible;
-    var SIDEBAR_WIDTH = 570;
+    var SIDEBAR_WIDTH = 540;
     right_info.on('click', function () {
         var sidebarWidth = isSidebarVisible ? 0 : SIDEBAR_WIDTH;
 
@@ -28,12 +28,12 @@ function sidebar() {
 }
 function showTopLogo() {
 
-
-
-
-
     topButtom.click(function () {
-        $("html,body").animate({scrollTop: 0}, 1000);//点击回到顶部
+        if($(document).scrollTop()==0){
+            return null;
+        }//解决多次点击top的BUG
+
+       else{$("html,body").animate({scrollTop: 0}, 1000);} //点击回到顶部
     })
 
 

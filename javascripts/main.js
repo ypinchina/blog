@@ -30,7 +30,14 @@ function sidebar() {
 }
 
 function showTopLogo() {
-
+    topButtom.fadeOut();
+    $(window).scroll(function () {
+        if($(document).scrollTop()>400){
+            topButtom.fadeIn();
+        }else {
+            topButtom.fadeOut()
+        }
+    });
     topButtom.click(function () {
         if($(document).scrollTop()==0){
             return null;

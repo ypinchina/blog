@@ -35,7 +35,7 @@ a {
 
 html {
 
-    background: linear-gradient(#22c3aa, #aee2d9);
+    background: linear-gradient( #22c3aa,#aee2c1,#22c3aa);
 }
 
 /*头部动画加载相关*/
@@ -64,9 +64,7 @@ html {
     animation-delay: 1s;
     animation-name: webload;
     animation-fill-mode: both;
-
-
-
+    margin-bottom: 40px;
 }
 
 .header h2 {
@@ -207,10 +205,13 @@ html {
     animation-name: webload;
     animation-fill-mode: both;
 }
+.main .wmd-preview{
+    padding: 30px 0 70px;
+}
 
 .main .wmd-preview h1{
     color: #07b;
-    margin: 50px 0 20px;
+    margin: 20px 0 20px;
     font-size: 30px;
 }
 .main .wmd-preview p
@@ -223,24 +224,54 @@ html {
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     border-radius:5px;
+    color: #fefefe;
+    font-weight: bold;
 
 }
 .main .wmd-preview code+code{
     margin-left: 5px;
 }
-.main .wmd-preview .Chinese{
+
+.main .wmd-preview .write_by_heart{
+     background-color: #91a7d0;
+ }
+.main .wmd-preview .about_movie{
     background-color: #fea852;
 }
-.main .wmd-preview .write_by_heart{
-    background-color: #91a7d0;
+.main .wmd-preview .feeling{
+    background-color: #8d5abb;
 }
+
+.main .wmd-preview .about_sandu{
+    background-color: #ea5a50;
+}
+.main .wmd-preview .view_more{
+    display: block;
+    width: 100px;
+    height: 30px;
+    color: #fff;
+    border: 2px solid #222;
+    text-align: center;
+    line-height: 30px;
+    margin: 50px auto 0;
+    background: #222;
+    font-family: "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Microsoft YaHei", Verdana, sans-serif;
+    transition: background-color .3s,color .3s;
+
+}
+.main .wmd-preview .view_more:hover{
+    background-color: #fff;
+    color: #222;
+}
+
 
 
 /*底部模块*/
 .footer {
-    height: 150px;
+    height: 190px;
     background-color: #333333;
     font-size: 0;
+    margin-top: 100px;
 
 
 }
@@ -303,5 +334,5 @@ html {
     text-align: center;
     font-size: 15px;
     color: #fff;
-    padding-top: 20px;
+    margin-top: 60px;
 }

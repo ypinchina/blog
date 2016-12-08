@@ -35,7 +35,7 @@ a {
 
 html {
 
-    background: linear-gradient( #22c3aa,#aee2c1,#22c3aa);
+    background: linear-gradient(#22c3aa, #aee2c1, #22c3aa);
 }
 
 /*头部动画加载相关*/
@@ -96,10 +96,12 @@ html {
     text-shadow: 1px 2px #22c3aa, 2px 3px #aee2d9;
 
 }
-.nav .nav_ul a:hover{
+
+.nav .nav_ul a:hover {
     color: #ff4870;
 }
-.nav .nav_ul a:first-child{
+
+.nav .nav_ul a:first-child {
     color: #ff4870;
 }
 
@@ -159,10 +161,12 @@ html {
     height: 32px;
     margin-top: 20px;
 }
+
 /*博客正文*/
-#wmd-preview{
+#wmd-preview {
     margin-top: 50px;
 }
+
 /*个人信息侧边栏*/
 .about_me {
     width: 0;
@@ -180,22 +184,22 @@ html {
 }
 
 .about_me .fix_area .myFavor {
-    display: inline-block;
+    display: block;
+    margin: 50px auto;
     width: 200px;
     height: 200px;
 
 }
 
 .myFavor img {
-    display: inline-block;
-    margin: 50px 60px;
+    display: block;
+    margin: 50px auto;
     border: 1px dashed #333;
 }
 
 .about_me h4 {
     text-align: center;
 }
-
 
 /*主体内容*/
 .main {
@@ -205,47 +209,54 @@ html {
     animation-name: webload;
     animation-fill-mode: both;
 }
-.main .wmd-preview{
+
+.main .wmd-preview {
     padding: 30px 0 70px;
 }
 
-.main .wmd-preview h1{
+.main .wmd-preview h1 {
     color: #07b;
     margin: 20px 0 20px;
     font-size: 30px;
 }
-.main .wmd-preview p
-{   padding: 10px 0;
+
+.main .wmd-preview p {
+    padding: 10px 0;
     line-height: 25px;
-    font-family: PingFang SC,Hiragino Sans GB,Helvetica Neue,Microsoft Yahei,WenQuanYi Micro Hei,sans-serif
+    font-family: PingFang SC, Hiragino Sans GB, Helvetica Neue, Microsoft Yahei, WenQuanYi Micro Hei, sans-serif
 }
-.main .wmd-preview code{
-    padding:  4px;
-    -webkit-border-radius:5px;
-    -moz-border-radius:5px;
-    border-radius:5px;
+
+.main .wmd-preview code {
+    padding: 4px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
     color: #fefefe;
     font-weight: bold;
 
 }
-.main .wmd-preview code+code{
+
+.main .wmd-preview code + code {
     margin-left: 5px;
 }
 
-.main .wmd-preview .write_by_heart{
-     background-color: #91a7d0;
- }
-.main .wmd-preview .about_movie{
+.main .wmd-preview .write_by_heart {
+    background-color: #91a7d0;
+}
+
+.main .wmd-preview .about_movie {
     background-color: #fea852;
 }
-.main .wmd-preview .feeling{
+
+.main .wmd-preview .feeling {
     background-color: #8d5abb;
 }
 
-.main .wmd-preview .about_sandu{
+.main .wmd-preview .about_sandu {
     background-color: #ea5a50;
 }
-.main .wmd-preview .view_more{
+
+.main .wmd-preview .view_more {
     display: block;
     width: 100px;
     height: 30px;
@@ -256,15 +267,14 @@ html {
     margin: 50px auto 0;
     background: #222;
     font-family: "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Microsoft YaHei", Verdana, sans-serif;
-    transition: background-color .3s,color .3s;
+    transition: background-color .3s, color .3s;
 
 }
-.main .wmd-preview .view_more:hover{
+
+.main .wmd-preview .view_more:hover {
     background-color: #fff;
     color: #222;
 }
-
-
 
 /*底部模块*/
 .footer {
@@ -273,8 +283,8 @@ html {
     font-size: 0;
     margin-top: 100px;
 
-
 }
+
 .footer #contactMe {
     height: 150px;
 

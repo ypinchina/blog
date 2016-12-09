@@ -185,9 +185,9 @@ html {
 
 .about_me .fix_area .myFavor {
     display: block;
-    margin: 50px auto;
-    width: 200px;
-    height: 200px;
+    margin: 0px auto 50px;
+    width: 150px;
+    height: 150px;
 
 }
 
@@ -197,8 +197,52 @@ html {
     border: 1px dashed #333;
 }
 
-.about_me h4 {
-    text-align: center;
+.about_me .my_info {
+    width: 240px;
+    margin: 0 auto;
+    color: #222;
+    font-family: PingFang SC, Hiragino Sans GB, Helvetica Neue, Microsoft Yahei, WenQuanYi Micro Hei, sans-serif
+}
+
+.about_me .my_info li {
+    padding: 8px;
+}
+
+.about_me .my_info a {
+    color: #222;
+    text-decoration: underline;
+}
+
+.about_me .my_info a:hover {
+    color: #f00;
+}
+
+.about_me .my_info li span {
+    display: inline-block;
+    width: 15px;
+    height:15px;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+
+}
+
+.about_me .my_info li:nth-child(2) span {
+    background: url("../images/person.ico");
+}
+
+.about_me .my_info li:nth-child(3) span {
+    background: url("../images/location.ico");
+    width: 14px;
+}
+
+
+.about_me .my_info li:nth-child(4) span {
+    background: url("../images/blog.ico");
+}
+
+.about_me .my_info li:nth-child(5) span {
+    background: url("../images/Nmail.ico");
+    height: 14px;
 }
 
 /*主体内容*/
@@ -223,7 +267,7 @@ html {
 .main .wmd-preview p {
     padding: 10px 0;
     line-height: 25px;
-    font-family: PingFang SC, Hiragino Sans GB, Helvetica Neue, Microsoft Yahei, WenQuanYi Micro Hei, sans-serif
+    font-family: PingFang SC, Hiragino Sans GB, Helvetica Neue, Microsoft Yahei, WenQuanYi Micro Hei, sans-serif;
 }
 
 .main .wmd-preview code {

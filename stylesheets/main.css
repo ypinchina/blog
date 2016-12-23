@@ -41,7 +41,7 @@ html {
 /*头部动画加载相关*/
 @keyframes webload {
     0% {
-
+        filter: opacity();
         opacity: 0;
 
     }
@@ -388,6 +388,18 @@ html {
 .footer p {
     text-align: center;
     font-size: 15px;
-    color: #fff;
+    color: #fefefe;
     margin-top: 60px;
+    font-weight: bold;
+}
+/*站长统计*/
+#cnzz_stat_icon_1261034251{
+    display: block;
+    text-align: center;
+    background-color: #333;
+    padding: 10px 0;
+    font-size: 12px;
+}
+#cnzz_stat_icon_1261034251 a{
+    color: #fefefe;
 }

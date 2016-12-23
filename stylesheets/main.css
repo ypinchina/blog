@@ -320,6 +320,46 @@ html {
     background-color: #fff;
     color: #222;
 }
+/*选页区*/
+.page_box{
+    width: 100%;
+    border-top: 1px #eee solid;
+    margin-top: 70px;
+    color: #555;
+
+
+}
+.page_area {
+    width: 196px;
+    margin: 0 auto;
+    text-align: center;
+}
+.page_area a{
+    display: inline-block;
+    position: relative;
+    top:-1px;
+    padding: 0 10px;
+    margin: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    border-top: 1px #eee solid;
+    font-family: "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Microsoft YaHei", Verdana, sans-serif;
+    transition: border-top-color .6s;
+}
+.page_area a:hover{
+    cursor: pointer;
+   border-top-color: #000;
+
+
+}
+.page_active{
+    background-color: #ccc;
+    color: #fff;
+}
+.page_area a:first-child:hover{
+    cursor: default;
+    border-top-color: #eee;
+}
 
 /*底部模块*/
 .footer {

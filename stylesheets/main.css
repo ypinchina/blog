@@ -41,7 +41,7 @@ html {
 /*头部动画加载相关*/
 @keyframes webload {
     0% {
-        filter: opacity();
+       filter: alpha(opacity=0);
         opacity: 0;
 
     }

@@ -444,3 +444,13 @@ html {
 #cnzz_stat_icon_1261034251 a{
     color: #fefefe;
 }
+/*文章样式*/
+.title-center{
+    text-align: center;
+    color: #777;
+}
+.return{
+    width: 60px;
+    height: 20px;
+    background-color: #ccc;
+}

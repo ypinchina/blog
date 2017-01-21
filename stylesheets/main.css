@@ -450,7 +450,26 @@ html {
     color: #777;
 }
 .return{
-    width: 60px;
-    height: 20px;
-    background-color: #ccc;
+    display: block;
+    width: 100px;
+    height: 30px;
+    color: #222;
+    border: 2px solid #fff;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: 400;
+    margin-top: 30px ;
+    background: #f3d10e;
+    font-family: "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Microsoft YaHei", Verdana, sans-serif;
+    transition: background-color .3s, color .3s;
+
 }
+
+.return:hover {
+    background-color: #222;
+    color: #fff;
+}
+

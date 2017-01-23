@@ -269,6 +269,7 @@ html {
 .main .wmd-preview p {
     padding: 10px 0;
     line-height: 25px;
+    font-size: 16px;
     font-family: PingFang SC, Hiragino Sans GB, Helvetica Neue, Microsoft Yahei, WenQuanYi Micro Hei, sans-serif;
 }
 
@@ -448,10 +449,6 @@ html {
     color: #fefefe;
 }
 /*文章样式*/
-.title-center{
-    text-align: center;
-    color: #777;
-}
 .return{
     display: block;
     width: 100px;

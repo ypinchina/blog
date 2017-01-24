@@ -1,3 +1,7 @@
+html{
+    font-size: 62.5%;
+    background: linear-gradient(#aee2c1, #82bdFF, #aee2c1);
+}
 ul {
     list-style: none;
 }
@@ -34,10 +38,7 @@ a {
     zoom: 1;
 }
 
-html {
 
-    background: linear-gradient(#aee2c1, #82bdFF, #aee2c1);
-}
 
 /*头部动画加载相关*/
 @keyframes webload {
@@ -57,76 +58,111 @@ html {
     width: 800px;
     margin: 0 auto;
 }
+@media  only screen and(max-width: 80rem){
+    .center_container{
+        width: 100%;
+    }
+}
 
-/*头部导航*/
+    /*头部导航*/
 .header {
     border-top: 5px #000 solid;
     animation-duration: 1.5s;
     animation-delay: 1s;
     animation-name: webload;
     animation-fill-mode: both;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .header h2 {
-    width: 280px;
-    height: 27px;
     color: #fff;
     background-color: #000000;
     text-align: center;
     margin: 20px auto;
-    -webkit-border-radius: 20px 0 20px 0;
-    -moz-border-radius: 20px 0 20px 0;
-    border-radius: 20px 0 20px 0;
+    font-size: 1.5rem;
+    width: 18rem;
+    -webkit-border-radius: 2rem 0 2rem 0;
+    -moz-border-radius: 2rem 0 2rem 0;
+    border-radius: 2rem 0 2rem 0;
 }
 
 .nav {
     font-size: 0;
-    padding-top: 40px;
+    padding-top: 30px;
+}
+.nav .nav_ul{
+    width: 43rem;
+    margin: 0 auto;
+}
+@media  only screen and (max-width: 40em){
+    .nav {
+        font-size: 0;
+        padding-top: 0;
+        width: 22rem;
+        margin: 0 auto;
+
+    }
+    .nav .nav_ul li:last-child{
+        display: none;
+    }
+
+    .nav .nav_ul a{
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+}
+@media  only screen and (max-width: 40em) and (min-width: 80em){
+
 }
 
-.nav .nav_ul a {
+.nav .nav_ul li{
     display: inline-block;
-    width: 130px;
     font-size: 20px;
     text-align: center;
-    color: #fefefe;
     font-family: Lato, "Microsoft YaHei", sans-serif;
     font-weight: bold;
     transition: color .4s ease-in-out;
     text-shadow: 1px 2px #22c3aa, 2px 3px #aee2d9;
-
+    margin-right: 1rem;
+    padding:0 1.2rem ;
 }
-
-.nav .nav_ul a:hover {
+.nav .nav_ul li a{
+color: #fefefe;}
+.nav .nav_ul li a:hover {
     color: #ff4870;
 }
 
-.nav .nav_ul a:first-child {
+.nav .nav_ul li:first-child  a{
     color: #ff4870;
 }
 
-.nav .nav_ul a + a {
-    margin-left: 20px;
-}
 
 .myLogo {
     width: 300px;
     height: 310px;
     margin: 10px auto 20px;
 }
+@media  only screen and (max-width: 55em){
+    .myLogo {
+    margin: 10px auto 0;}
+}
+.myLogo .dendoh{
+    margin: 0 auto;
+}
 
-.myLogo .dendoh {
-    width: 300px;
-    height: 300px;
-    background: url("../images/dendoh.jpg") center;
+.myLogo .dendoh img{
+    display: block;
+    margin: 0 auto;
+    /*width: 28rem;*/
+    /*height: 28rem;*/
+    /*background: url("../images/dendoh.jpg") center no-repeat;*/
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
     transition: transform 1s ease-in;
 }
 
-.myLogo .dendoh:hover {
+.myLogo .dendoh img:hover {
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
@@ -162,7 +198,11 @@ html {
     height: 32px;
     margin-top: 20px;
 }
-
+@media only screen and (max-width: 70em){
+  .slice_bar{
+      display: none;
+  }
+}
 /*博客正文*/
 #wmd-preview {
     margin-top: 50px;
@@ -246,6 +286,11 @@ html {
     background: url("../images/Nmail.ico");
     height: 14px;
 }
+@media only screen and (max-width: 70em){
+    .about_me{
+        display: none;
+    }
+}
 
 /*主体内容*/
 .main {
@@ -258,6 +303,15 @@ html {
 
 .main .wmd-preview {
     padding: 30px 0 70px;
+}
+@media  only screen and(max-width: 80rem){
+    .main .wmd-preview{
+        width: 400px;
+        padding: 0;
+    }
+    .main .wmd-preview p{
+        padding: 0;
+    }
 }
 
 .main .wmd-preview h1 {

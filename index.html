@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>PengYi的空中楼阁</title>
     <!--各种视口宽度统一，默认缩放比例为1-->
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no ">
     <link rel="stylesheet" href="stylesheets/normalize.min.css">
     <link rel="stylesheet" href="stylesheets/main.css">
     <link rel="shortcut icon" href="me.ico">
@@ -17,18 +19,23 @@
             <!--头部导航栏-->
                 <div class="header">
                     <div class="myLogo center_container">
-                        <div class="dendoh"></div>
+                        <div class="dendoh">
+                            <picture>
+                                <source srcset="images/dendoh.jpg" media="(min-width:30em)" >
+                                <img src="images/dendoh_m.jpg" >
+                            </picture>
+                        </div>
                         <h2>PengYi的空中楼阁</h2>
                     </div>
 
                     <div class="nav center_container">
-                        <div class="nav_ul">
-                            <a href="#" class="nav_active">首页</a>
-                            <a href="#">书评</a>
-                            <a href="#">影评</a>
-                            <a href="#">心之随笔</a>
-                            <a href="#contactMe">follow me</a>
-                        </div>
+                        <ul class="nav_ul">
+                            <li><a href="#" class="nav_active">首页</a></li>
+                            <li><a href="#">书评</a></li>
+                            <li><a href="#">影评</a></li>
+                            <li><a href="#">心之随笔</a></li>
+                            <li><a href="#contactMe">follow me</a></li>
+                        </ul>
                     </div>
                 </div>
 
@@ -91,7 +98,7 @@
         </div>
 
 <script src="javascripts/jquery-1.7.2.min.js"></script>
-
+<script src="javascripts/picturefill.js"></script>
 <script src="javascripts/main.js"></script>
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261034251'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1261034251%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
 </body>

@@ -205,7 +205,7 @@ a {
     margin-top: 20px;
 }
 
-@media only screen and (max-width: 70em) {
+@media only screen and (max-width: 68em) {
     .slice_bar {
         display: none;
     }
@@ -294,7 +294,7 @@ a {
     height: 14px;
 }
 
-@media only screen and (max-width: 70em) {
+@media only screen and (max-width: 68em) {
     .about_me {
         display: none;
     }
@@ -327,9 +327,9 @@ a {
 }
 
 
-@media only screen and (max-width: 60em){
+@media only screen and (max-width: 70em){
     .main .wmd-preview {
-        padding: 3rem 7rem;
+        padding: 3rem 3rem;
     }
     .main .wmd-preview h1 {
         font-size: 2rem;
@@ -341,7 +341,11 @@ a {
         margin: 0 auto;
     }
 }
-
+@media only screen and (max-width: 40em){
+.main .wmd-preview p {
+    font-size: 1.4rem;
+}
+}
 .main .wmd-preview code {
     padding: 4px;
     -webkit-border-radius: 5px;

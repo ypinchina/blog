@@ -1,7 +1,8 @@
-html{
+html {
     font-size: 62.5%;
     background: linear-gradient(#aee2c1, #82bdFF, #aee2c1);
 }
+
 ul {
     list-style: none;
 }
@@ -38,8 +39,6 @@ a {
     zoom: 1;
 }
 
-
-
 /*头部动画加载相关*/
 @keyframes webload {
     0% {
@@ -58,13 +57,8 @@ a {
     width: 800px;
     margin: 0 auto;
 }
-@media  only screen and(max-width: 80rem){
-    .center_container{
-        width: 100%;
-    }
-}
 
-    /*头部导航*/
+/*头部导航*/
 .header {
     border-top: 5px #000 solid;
     animation-duration: 1.5s;
@@ -90,11 +84,13 @@ a {
     font-size: 0;
     padding-top: 30px;
 }
-.nav .nav_ul{
-    width: 43rem;
+
+.nav .nav_ul {
     margin: 0 auto;
+    text-align: center;
 }
-@media  only screen and (max-width: 40em){
+
+@media only screen and (max-width: 40em) {
     .nav {
         font-size: 0;
         padding-top: 0;
@@ -102,20 +98,25 @@ a {
         margin: 0 auto;
 
     }
-    .nav .nav_ul li:last-child{
+
+    .nav .nav_ul li:last-child {
         display: none;
     }
 
-    .nav .nav_ul a{
+    .nav .nav_ul a {
         font-size: 1.2rem;
         line-height: 2rem;
     }
 }
-@media  only screen and (max-width: 40em) and (min-width: 80em){
 
+@media only screen and (max-width: 30em) and (min-width: 60em) {
+    .nav .nav_ul {
+        margin: 3rem auto 0;
+        text-align: center;
+    }
 }
 
-.nav .nav_ul li{
+.nav .nav_ul li {
     display: inline-block;
     font-size: 20px;
     text-align: center;
@@ -124,33 +125,38 @@ a {
     transition: color .4s ease-in-out;
     text-shadow: 1px 2px #22c3aa, 2px 3px #aee2d9;
     margin-right: 1rem;
-    padding:0 1.2rem ;
+    padding: 0 1.2rem;
 }
-.nav .nav_ul li a{
-color: #fefefe;}
+
+.nav .nav_ul li a {
+    color: #fefefe;
+}
+
 .nav .nav_ul li a:hover {
     color: #ff4870;
 }
 
-.nav .nav_ul li:first-child  a{
+.nav .nav_ul li:first-child a {
     color: #ff4870;
 }
 
-
 .myLogo {
-    width: 300px;
-    height: 310px;
+    width: 260px;
+    height: 300px;
     margin: 10px auto 20px;
 }
-@media  only screen and (max-width: 55em){
+
+@media only screen and (max-width: 55em) {
     .myLogo {
-    margin: 10px auto 0;}
+        margin: 10px auto 0;
+    }
 }
-.myLogo .dendoh{
+
+.myLogo .dendoh {
     margin: 0 auto;
 }
 
-.myLogo .dendoh img{
+.myLogo .dendoh img {
     display: block;
     margin: 0 auto;
     /*width: 28rem;*/
@@ -198,11 +204,13 @@ color: #fefefe;}
     height: 32px;
     margin-top: 20px;
 }
-@media only screen and (max-width: 70em){
-  .slice_bar{
-      display: none;
-  }
+
+@media only screen and (max-width: 70em) {
+    .slice_bar {
+        display: none;
+    }
 }
+
 /*博客正文*/
 #wmd-preview {
     margin-top: 50px;
@@ -226,7 +234,7 @@ color: #fefefe;}
 
 .about_me .fix_area .myFavor {
     display: block;
-    margin: 0px auto 50px;
+    margin: 0 auto 50px;
     width: 150px;
     height: 150px;
 
@@ -262,7 +270,7 @@ color: #fefefe;}
 .about_me .my_info li span {
     display: inline-block;
     width: 15px;
-    height:15px;
+    height: 15px;
     background-repeat: no-repeat;
     margin-right: 5px;
 
@@ -277,7 +285,6 @@ color: #fefefe;}
     width: 14px;
 }
 
-
 .about_me .my_info li:nth-child(4) span {
     background: url("../images/blog.ico");
 }
@@ -286,8 +293,9 @@ color: #fefefe;}
     background: url("../images/Nmail.ico");
     height: 14px;
 }
-@media only screen and (max-width: 70em){
-    .about_me{
+
+@media only screen and (max-width: 70em) {
+    .about_me {
         display: none;
     }
 }
@@ -302,29 +310,36 @@ color: #fefefe;}
 }
 
 .main .wmd-preview {
-    padding: 30px 0 70px;
-}
-@media  only screen and(max-width: 80rem){
-    .main .wmd-preview{
-        width: 400px;
-        padding: 0;
-    }
-    .main .wmd-preview p{
-        padding: 0;
-    }
+    padding: 3rem 0 7rem;
 }
 
 .main .wmd-preview h1 {
     color: #07b;
-    margin: 20px 0 20px;
-    font-size: 30px;
+    margin: 2rem 0 2rem;
+    font-size: 3rem;
 }
 
 .main .wmd-preview p {
-    padding: 10px 0;
-    line-height: 25px;
-    font-size: 16px;
+    padding: 1rem 0;
+    line-height: 2.5rem;
+    font-size: 1.6rem;
     font-family: PingFang SC, Hiragino Sans GB, Helvetica Neue, Microsoft Yahei, WenQuanYi Micro Hei, sans-serif;
+}
+
+
+@media only screen and (max-width: 60em){
+    .main .wmd-preview {
+        padding: 3rem 7rem;
+    }
+    .main .wmd-preview h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .page_container {
+        width: 100%;
+        margin: 0 auto;
+    }
 }
 
 .main .wmd-preview code {
@@ -352,23 +367,24 @@ color: #fefefe;}
 .main .wmd-preview .feeling {
     background-color: #8d5abb;
 }
-.main .wmd-preview .memorize{
+
+.main .wmd-preview .memorize {
     background-color: #e67e22;
 }
 
-.main .wmd-preview .book{
+.main .wmd-preview .book {
     background-color: #ea5a50;
 }
 
 .main .wmd-preview .view_more {
     display: block;
-    width: 100px;
-    height: 30px;
+    width: 9rem;
+    height: 2.8rem;
     color: #fff;
     border: 2px solid #222;
     text-align: center;
-    line-height: 30px;
-    margin: 50px auto 0;
+    line-height: 2.8rem;
+    margin: 4.8rem auto 0;
     background: #222;
     font-family: "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Microsoft YaHei", Verdana, sans-serif;
     transition: background-color .3s, color .3s;
@@ -379,24 +395,26 @@ color: #fefefe;}
     background-color: #fff;
     color: #222;
 }
+
 /*选页区*/
-.page_box{
+.page_box {
     width: 100%;
     border-top: 1px #eee solid;
     margin-top: 70px;
     color: #555;
 
-
 }
+
 .page_area {
     width: 196px;
     margin: 0 auto;
     text-align: center;
 }
-.page_area a{
+
+.page_area a {
     display: inline-block;
     position: relative;
-    top:-1px;
+    top: -1px;
     padding: 0 10px;
     margin: 0 10px;
     height: 30px;
@@ -405,17 +423,19 @@ color: #fefefe;}
     font-family: "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Microsoft YaHei", Verdana, sans-serif;
     transition: border-top-color .6s;
 }
-.page_area a:hover{
-    cursor: pointer;
-   border-top-color: #000;
 
+.page_area a:hover {
+    cursor: pointer;
+    border-top-color: #000;
 
 }
-.page_active{
+
+.page_active {
     background-color: #ccc;
     color: #fff;
 }
-.page_area a:first-child:hover{
+
+.page_area a:first-child:hover {
     cursor: default;
     border-top-color: #eee;
 }
@@ -491,31 +511,34 @@ color: #fefefe;}
     margin-top: 60px;
     font-weight: bold;
 }
+
 /*站长统计*/
-#cnzz_stat_icon_1261034251{
+#cnzz_stat_icon_1261034251 {
     display: block;
     text-align: center;
     background-color: #333;
     padding: 10px 0;
     font-size: 12px;
 }
-#cnzz_stat_icon_1261034251 a{
+
+#cnzz_stat_icon_1261034251 a {
     color: #fefefe;
 }
+
 /*文章样式*/
-.return{
+.return {
     display: block;
     width: 100px;
     height: 30px;
     color: #222;
     border: 2px solid #fff;
-    -webkit-border-radius:5px;
-    -moz-border-radius:5px;
-    border-radius:5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
     text-align: center;
     line-height: 30px;
     font-weight: 400;
-    margin-top: 30px ;
+    margin-top: 30px;
     background: #f3d10e;
     font-family: "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Microsoft YaHei", Verdana, sans-serif;
     transition: background-color .3s, color .3s;
@@ -527,3 +550,8 @@ color: #fefefe;}
     color: #fff;
 }
 
+@media only screen and (max-width: 60em) {
+    .center_container {
+        width: 100%;
+    }
+}

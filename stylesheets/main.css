@@ -1,6 +1,7 @@
 html {
     font-size: 62.5%;
     background: linear-gradient(#aee2c1, #82bdFF, #aee2c1);
+
 }
 
 ul {
@@ -139,7 +140,7 @@ a {
     color: #ff4870;
 }
 
-.nav .nav_ul li:first-child a {
+.nav .nav_ul .nav_active{
     color: #ff4870;
 }
 

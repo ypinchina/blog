@@ -17,18 +17,23 @@
     <!--头部导航栏-->
     <div class="header">
         <div class="myLogo center_container">
-            <div class="dendoh"></div>
+            <div class="dendoh">
+                <picture>
+                    <source srcset="../images/dendoh.jpg" media="(min-width:40em)" >
+                    <img src="../images/dendoh_m.jpg" >
+                </picture>
+            </div>
             <h2>PengYi的空中楼阁</h2>
         </div>
 
         <div class="nav center_container">
-            <div class="nav_ul">
-                <a href="#" class="nav_active">首页</a>
-                <a href="#">书评</a>
-                <a href="#">影评</a>
-                <a href="#">心之随笔</a>
-                <a href="#contactMe">follow me</a>
-            </div>
+            <ul class="nav_ul">
+                <li><a href="#" class="nav_active">首页</a></li>
+                <li><a href="#">书评</a></li>
+                <li><a href="#">影评</a></li>
+                <li><a href="#">心之随笔</a></li>
+                <li><a href="#contactMe">follow me</a></li>
+            </ul>
         </div>
     </div>
 
@@ -36,7 +41,7 @@
     <div class="main  center_container">
         <div class="about_me">
             <div class="fix_area">
-                <div class="myFavor"><img src="../me.ico" alt="" width="150px" height="150px"></div>
+                <div class="myFavor"><img src="../me.ico" alt="" width="150" height="150"></div>
                 <ul class="my_info">
                     <li style="font-weight: bold">一只跃跃欲试的前端攻城狮</li>
                     <li><span></span>: PengYi</li>
@@ -87,7 +92,7 @@
 </div>
 
 <script src="../javascripts/jquery-1.7.2.min.js"></script>
-
+<script src="../javascripts/picturefill.js"></script>
 <script src="../javascripts/main.js"></script>
 <script type="text/javascript">
     $(".return").click(function () {

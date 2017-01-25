@@ -569,7 +569,7 @@ a {
     text-align: center;
     line-height: 30px;
     font-weight: 400;
-    margin-top: 30px;
+    margin-bottom: 20px;
     font-size: 13px;
     background: #f3d10e;
     font-family: "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Microsoft YaHei", Verdana, sans-serif;
@@ -589,4 +589,8 @@ a {
     .return {
         margin-left: 40px;
     }
+}
+/*评论*/
+#uyan_frame{
+    padding: 20px 10px 0 10px;
 }

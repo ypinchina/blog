@@ -81,7 +81,7 @@ a {
 }
 
 .nav {
-    font-size: 0;
+
     padding-top: 30px;
 }
 
@@ -104,7 +104,7 @@ a {
     }
 
     .nav .nav_ul a {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         line-height: 2rem;
     }
 }
@@ -205,7 +205,7 @@ a {
     margin-top: 20px;
 }
 
-@media only screen and (max-width: 68em) {
+@media only screen and (max-width: 62em) {
     .slice_bar {
         display: none;
     }
@@ -224,6 +224,7 @@ a {
     top: 0;
     bottom: 0;
     background: linear-gradient(#fea852, #ccc);
+    font-size: 14px;
 }
 
 .about_me .fix_area {
@@ -294,7 +295,7 @@ a {
     height: 14px;
 }
 
-@media only screen and (max-width: 68em) {
+@media only screen and (max-width: 62em) {
     .about_me {
         display: none;
     }
@@ -515,6 +516,27 @@ a {
     margin-top: 60px;
     font-weight: bold;
 }
+@media only screen and (max-width: 48em) {
+    .footer #contactMe .social:nth-child(2){
+        display: none;
+    }
+    .footer #contactMe .social{
+        margin: 25px 15px 0;
+    }
+    .footer #contactMe{
+        text-align: center;
+    }
+    .footer p{
+        margin-top: 30px;
+    }
+    .footer{
+        margin-top: 30px;
+    }
+    .page_box{
+        margin-top: 40px;
+
+    }
+}
 
 /*站长统计*/
 #cnzz_stat_icon_1261034251 {
@@ -557,5 +579,8 @@ a {
 @media only screen and (max-width: 60em) {
     .center_container {
         width: 100%;
+    }
+    .return {
+        margin-left: 40px;
     }
 }

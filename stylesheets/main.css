@@ -160,13 +160,23 @@ a {
 .myLogo .dendoh {
     margin: 0 auto;
 }
+.artical_pic .artical_img{
+    text-align: center;
+    overflow: hidden;
+    padding-top: 10px;
+}
+.artical_pic .artical_img img{
+    text-align: center;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+
+
 
 .myLogo .dendoh img {
     display: block;
     margin: 0 auto;
-    /*width: 28rem;*/
-    /*height: 28rem;*/
-    /*background: url("../images/dendoh.jpg") center no-repeat;*/
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;

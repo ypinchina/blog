@@ -129,6 +129,12 @@ a {
     margin-right: 2rem;
     padding: 0 1.2rem;
 }
+@media only screen and (max-width: 30em){
+    .nav .nav_ul li {
+    margin-right: 1rem;
+
+    }
+}
 .nav .nav_ul li:last-child{
     margin-right: 0;
 }
@@ -536,7 +542,7 @@ a {
         display: none;
     }
     .footer #contactMe .social{
-        margin: 25px 15px 0;
+        margin: 25px 10px 0;
     }
     .footer #contactMe{
         text-align: center;
@@ -601,4 +607,3 @@ a {
         margin-left: 40px;
     }
 }
-

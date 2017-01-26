@@ -465,6 +465,10 @@ a {
     cursor: default;
     border-top-color: #eee;
 }
+/*浏览游客*/
+.visitor{
+    margin: 20px 0;
+}
 
 /*底部模块*/
 .footer {

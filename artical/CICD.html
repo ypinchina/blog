@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CI/CD 快速掌握指南 - 前端面试必备</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-bg: #ffffff;
+            --color-surface: #f8f9fa;
+            --color-surface-elevated: #ffffff;
+            --color-text: #1a1a1a;
+            --color-text-muted: #6c757d;
+            --color-accent: #7c3aed;
+            --color-accent-text: #ffffff;
+            --color-accent-light: #6d28d9;
+            --color-hover: #f3f4f6;
+            --color-border: #e5e7eb;
+            --color-success: #16a34a;
+            --color-warning: #d97706;
+            --color-danger: #e11d48;
+            --color-info: #2563eb;
+            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg: #0d1117;
+                --color-surface: #161b22;
+                --color-surface-elevated: #1c2128;
+                --color-text: #c9d1d9;
+                --color-text-muted: #8b949e;
+                --color-accent: #8b5cf6;
+                --color-accent-text: #ffffff;
+                --color-accent-light: #a78bfa;
+                --color-hover: #21262d;
+                --color-border: #30363d;
+            }
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--color-surface);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 0.5rem;
+            color: var(--color-accent);
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin: 2rem 0 1rem;
+            color: var(--color-text);
+        }
+
+        h3 {
+            font-size: 16px;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--color-text);
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .concept-card {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .concept-title {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 0.5rem;
+            color: var(--color-accent-light);
+        }
+
+        .concept-desc {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--color-text-muted);
+        }
+
+        .highlight {
+            background: rgba(139, 92, 246, 0.15);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--color-accent);
+        }
+
+        .memorize-box {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(139, 92, 246, 0.08));
+            border-left: 4px solid var(--color-info);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .memorize-title {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 0.75rem;
+            color: var(--color-info);
+        }
+
+        ul,
+        ol {
+            margin: 0.75rem 0;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--color-text-muted);
+            margin: 0.5rem 0;
+        }
+
+        .code-block {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            font-family: var(--font-mono);
+            font-size: 13px;
+            line-height: 1.7;
+            overflow-x: auto;
+            color: var(--color-text);
+        }
+
+        .priority-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .priority-high {
+            background: rgba(225, 29, 72, 0.15);
+            color: var(--color-danger);
+        }
+
+        .priority-medium {
+            background: rgba(217, 119, 6, 0.15);
+            color: var(--color-warning);
+        }
+
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.6rem 1.2rem;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            background: var(--color-hover);
+            border-color: var(--color-accent);
+        }
+
+        .tab-btn.active {
+            background: var(--color-accent);
+            color: var(--color-accent-text);
+            border-color: var(--color-accent);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li::before {
+            content: "☐ ";
+            color: var(--color-accent);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .tip-box {
+            background: rgba(22, 163, 74, 0.1);
+            border-left: 4px solid var(--color-success);
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            font-size: 14px;
+        }
+
+        .question-box {
+            background: var(--color-surface-elevated);
+            border: 1px solid var(--color-accent);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1.25rem 0;
+        }
+
+        .question {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 0.75rem;
+            color: var(--color-accent);
+        }
+
+        .answer {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--color-text-muted);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+            font-size: 13px;
+            color: var(--color-text-muted);
+        }
+
+        .footer a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🚀 CI/CD 快速掌握指南</h1>
+        <p class="subtitle">前端面试必备 · 2-3天快速上手 · 实战导向</p>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('concepts')">核心概念</button>
+            <button class="tab-btn" onclick="switchTab('mustknow')">必背内容</button>
+            <button class="tab-btn" onclick="switchTab('github-actions')">GitHub Actions</button>
+            <button class="tab-btn" onclick="switchTab('interview')">面试重点</button>
+        </div>
+
+        <!-- Tab 1: 核心概念 -->
+        <div id="tab-concepts" class="tab-content active">
+            <div class="section">
+                <h2>什么是 CI/CD？</h2>
+                <div class="concept-card">
+                    <div class="concept-title">CI（持续集成）Continuous Integration</div>
+                    <div class="concept-desc">
+                        代码提交后<strong>自动构建、自动测试</strong>，确保新代码不会破坏现有功能。<br>
+                        <span style="color: var(--color-success)">🎯 目标：快速发现问题</span>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <div class="concept-title">CD（持续部署）Continuous Deployment</div>
+                    <div class="concept-desc">
+                        通过测试的代码<strong>自动部署到生产环境</strong>，无需人工干预。<br>
+                        <span style="color: var(--color-success)">🎯 目标：加速交付</span>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <div class="concept-title">CD（持续交付）Continuous Delivery</div>
+                    <div class="concept-desc">
+                        代码准备好可以部署，但需要<strong>人工确认</strong>才部署到生产环境。
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>典型 CI/CD 流程</h3>
+                <div class="code-block">
+                    开发者 push 代码
+                    ↓
+                    触发 CI Pipeline
+                    ↓
+                    1️⃣ 拉取代码 (Checkout)
+                    ↓
+                    2️⃣ 安装依赖 (npm ci)
+                    ↓
+                    3️⃣ 代码检查 (Lint)
+                    ↓
+                    4️⃣ 运行测试 (Test)
+                    ↓
+                    5️⃣ 构建项目 (Build)
+                    ↓
+                    6️⃣ 上传产物 (Artifact)
+                    ↓
+                    7️⃣ 部署到服务器 (Deploy) ← CD 阶段
+                </div>
+            </div>
+
+            <div class="tip-box">
+                💡 <strong>核心理念：</strong>自动化一切能自动化的步骤，减少人为错误，提高交付速度。
+            </div>
+        </div>
+
+        <!-- Tab 2: 必背内容 -->
+        <div id="tab-mustknow" class="tab-content">
+            <div class="memorize-box">
+                <div class="memorize-title">📌 必须记住的核心术语</div>
+                <ul class="checklist">
+                    <li><strong>Pipeline（流水线）：</strong>整个自动化流程的定义</li>
+                    <li><strong>Job（任务）：</strong>Pipeline 中的一个阶段（如 test、build、deploy）</li>
+                    <li><strong>Step（步骤）：</strong>Job 中的具体操作步骤</li>
+                    <li><strong>Runner/Agent（执行器）：</strong>运行 Job 的机器（Linux/Mac/Windows）</li>
+                    <li><strong>Artifact（产物）：</strong>构建输出的文件（如 dist/ 目录）</li>
+                    <li><strong>Cache（缓存）：</strong>缓存 node_modules 等加速构建</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>常见工具对比 <span class="priority-tag priority-high">高频考点</span></h3>
+                <div class="concept-card">
+                    <div class="concept-title">GitHub Actions ⭐ 推荐</div>
+                    <div class="concept-desc">
+                        ✅ <strong>优先学这个！</strong>免费、易用、与 GitHub 深度集成<br>
+                        适合：开源项目、个人项目、中小团队
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <div class="concept-title">GitLab CI</div>
+                    <div class="concept-desc">
+                        配置文件：<span class="highlight">.gitlab-ci.yml</span><br>
+                        适合：企业私有仓库
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <div class="concept-title">Jenkins</div>
+                    <div class="concept-desc">
+                        ⚠️ 老牌工具，配置复杂但灵活<br>
+                        适合：大型企业、复杂流程
+                    </div>
+                </div>
+            </div>
+
+            <div class="memorize-box">
+                <div class="memorize-title">🎯 面试必背：CI/CD 的好处</div>
+                <ol>
+                    <li><strong>快速反馈：</strong>代码有问题几分钟内就能发现</li>
+                    <li><strong>减少人工错误：</strong>自动化代替手动部署</li>
+                    <li><strong>提高交付频率：</strong>从每周发布变成每天发布</li>
+                    <li><strong>降低风险：</strong>小步快跑，每次变更很小</li>
+                    <li><strong>团队协作：</strong>统一的构建和部署标准</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Tab 3: GitHub Actions 实战 -->
+        <div id="tab-github-actions" class="tab-content">
+            <div class="section">
+                <h3>GitHub Actions 基础结构 <span class="priority-tag priority-high">必须会写</span></h3>
+                <div class="code-block">
+                    <span style="color: #6a9955"># 文件位置: .github/workflows/ci.yml</span>
+                    <span style="color: #569cd6">name</span>: CI Pipeline
+
+                    <span style="color: #6a9955"># 触发条件</span>
+                    <span style="color: #569cd6">on</span>:
+                    <span style="color: #569cd6">push</span>:
+                    <span style="color: #569cd6">branches</span>: [ main, develop ]
+                    <span style="color: #569cd6">pull_request</span>:
+                    <span style="color: #569cd6">branches</span>: [ main ]
+
+                    <span style="color: #6a9955"># 任务定义</span>
+                    <span style="color: #569cd6">jobs</span>:
+                    <span style="color: #569cd6">test-and-build</span>:
+                    <span style="color: #569cd6">runs-on</span>: ubuntu-latest
+
+                    <span style="color: #569cd6">steps</span>:
+                    - <span style="color: #569cd6">name</span>: Checkout code
+                    <span style="color: #569cd6">uses</span>: actions/checkout@v4
+
+                    - <span style="color: #569cd6">name</span>: Setup Node.js
+                    <span style="color: #569cd6">uses</span>: actions/setup-node@v4
+                    <span style="color: #569cd6">with</span>:
+                    <span style="color: #569cd6">node-version</span>: '18'
+                    <span style="color: #569cd6">cache</span>: 'npm'
+
+                    - <span style="color: #569cd6">name</span>: Install dependencies
+                    <span style="color: #569cd6">run</span>: npm ci
+
+                    - <span style="color: #569cd6">name</span>: Run linter
+                    <span style="color: #569cd6">run</span>: npm run lint
+
+                    - <span style="color: #569cd6">name</span>: Run tests
+                    <span style="color: #569cd6">run</span>: npm test
+
+                    - <span style="color: #569cd6">name</span>: Build project
+                    <span style="color: #569cd6">run</span>: npm run build
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>关键语法速记</h3>
+                <div class="concept-card">
+                    <div class="concept-title">触发时机 (on)</div>
+                    <div class="concept-desc">
+                        <span class="highlight">push</span> - 代码推送时触发<br>
+                        <span class="highlight">pull_request</span> - PR 创建/更新时触发<br>
+                        <span class="highlight">schedule</span> - 定时任务（cron 表达式）
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <div class="concept-title">执行命令 (run vs uses)</div>
+                    <div class="concept-desc">
+                        <span class="highlight">run</span>: 直接执行 shell 命令<br>
+                        <span class="highlight">uses</span>: 使用现成的 Action（如 checkout、setup-node）
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <div class="concept-title">缓存优化</div>
+                    <div class="concept-desc">
+                        在 setup-node 中加 <span class="highlight">cache: 'npm'</span><br>
+                        自动缓存 node_modules，下次构建快 50%+
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                💡 <strong>学习技巧：</strong>直接在 GitHub 上创建一个测试仓库，添加这个配置文件，push 代码就能看到效果！
+            </div>
+        </div>
+
+        <!-- Tab 4: 面试重点 -->
+        <div id="tab-interview" class="tab-content">
+            <div class="section">
+                <h3>高频面试题 & 回答模板</h3>
+
+                <div class="question-box">
+                    <div class="question">Q1: 你们项目的 CI/CD 流程是怎样的？</div>
+                    <div class="answer">
+                        <strong>回答模板：</strong><br><br>
+                        "我们使用 GitHub Actions，配置了自动化流水线：<br>
+                        1. 代码 push 或提 PR 时自动触发<br>
+                        2. 先跑 ESLint 做代码规范检查<br>
+                        3. 然后运行单元测试，覆盖率要求 80%+<br>
+                        4. 测试通过后构建生产包<br>
+                        5. 最后自动部署到测试环境，主分支还会部署到生产环境<br>
+                        这样能保证代码质量，也能快速交付功能。"
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question">Q2: 为什么需要 CI/CD？</div>
+                    <div class="answer">
+                        <strong>回答要点：</strong><br><br>
+                        • 手动部署容易出错，自动化更可靠<br>
+                        • 能快速发现 bug，不用等到上线才发现问题<br>
+                        • 提高团队效率，开发者专注于写代码而不是运维<br>
+                        • 支持频繁迭代，符合敏捷开发理念
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question">Q3: 如果 CI 构建失败了怎么办？</div>
+                    <div class="answer">
+                        <strong>回答思路：</strong><br><br>
+                        1. 查看 GitHub Actions 的日志，定位失败步骤<br>
+                        2. 如果是测试失败，本地复现并修复<br>
+                        3. 如果是环境问题，检查依赖版本或 Runner 配置<br>
+                        4. 修复后重新 push 触发构建<br>
+                        5. <strong>重要：</strong>构建失败时不应该合并代码到主分支
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <div class="question">Q4: 如何优化 CI/CD 的速度？</div>
+                    <div class="answer">
+                        <strong>优化手段：</strong><br><br>
+                        • 缓存 node_modules（最重要）<br>
+                        • 并行执行独立的 Job（如测试和构建并行）<br>
+                        • 只测试变化的文件（monorepo 场景）<br>
+                        • 使用更快的 Runner（如 self-hosted）<br>
+                        • 减少不必要的步骤，保持 Pipeline 精简
+                    </div>
+                </div>
+            </div>
+
+            <div class="memorize-box">
+                <div class="memorize-title">🎯 3 天学习计划</div>
+                <ul>
+                    <li><strong>Day 1:</strong> 理解概念 + 手写一个 ci.yml 文件</li>
+                    <li><strong>Day 2:</strong> 在真实项目中配置 GitHub Actions</li>
+                    <li><strong>Day 3:</strong> 练习面试问答 + 了解 GitLab CI 差异</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                💡 <strong>加分项：</strong>如果能提到"我们用 CI/CD 把部署时间从 30 分钟缩短到 5 分钟"，面试官会眼前一亮！
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>💻 前端 CI/CD 学习指南 | 为面试而准备</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="https://docs.github.com/en/actions" target="_blank">GitHub Actions 官方文档</a> ·
+                <a href="https://github.com/marketplace?type=actions" target="_blank">Actions Marketplace</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Show selected tab content
+            document.getElementById('tab-' + tabName).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
